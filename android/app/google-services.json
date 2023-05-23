@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "710959571219",
+    "project_id": "appluanvan-5158e",
+    "storage_bucket": "appluanvan-5158e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710959571219:android:e8f643a6d766f437583ae6",
+        "android_client_info": {
+          "package_name": "com.example.app_thoitrang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710959571219-j1jb9vcjtfdt8i40kuhnn3ttcnmuo60j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_thoitrang",
+            "certificate_hash": "67aa709350c7c020a53e364406e5b1974fa99df5"
+          }
+        },
+        {
+          "client_id": "710959571219-1tmb6vn7qoopdtigeovjd73nt05vnupm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfebdSdpzofj7POherFBum3ch4ril45q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710959571219-1tmb6vn7qoopdtigeovjd73nt05vnupm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
