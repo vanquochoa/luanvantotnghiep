@@ -49,7 +49,7 @@ const womenClothing = "Women Clothings",
     automobile = "Automobile",
     kidtoys = "Kids & Toys",
     sports = "Sports",
-    jewelery = "Jewekery",
+    jewelery = "Jewelery",
     cellphone = "Cellphone & Tab",
     furniture = "Furniture";
 

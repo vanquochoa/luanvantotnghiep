@@ -13,7 +13,7 @@ const featureTitles1 = [womenDress, girlsDress, girlsWatches];
 const featureTitles2 = [boysGlasses, mobilePhone, tShirts];
 
 const categoriesList = [
-  womenClothing,
+  womenDress,
   menClothingFashion,
   compAccess,
   automobile,
@@ -24,15 +24,15 @@ const categoriesList = [
   furniture
 ];
 const categoriesImage = [
+  imgS1,
   imgFc1,
   imgFc2,
   imgFc3,
   imgFc4,
   imgFc5,
+  imgS11,
   imgFc6,
-  imgFc7,
-  imgFc8,
-  imgFc9,
+  imgFc9
 ];
 
 const itemDetailButtonsList = [
@@ -43,5 +43,5 @@ const itemDetailButtonsList = [
   supportPolicy
 ];
 
-const profileButtonsList=[orders,wishlist,messages];
-const profileButtonsIcon=[icOrder,icFavoriteSeller,icMessages];
+const profileButtonsList = [orders, wishlist, messages];
+const profileButtonsIcon = [icOrder, icFavoriteSeller, icMessages];
