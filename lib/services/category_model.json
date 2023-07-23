@@ -1,74 +1,45 @@
 {
-    "categories":[{
-        "name": "Women Dress",
-        "subcategory":[
-            "Wedding & Event",
-            "Tops & Set",
-            "Watches"
-        ]
-    },
-    {
-        "name":"Men CloThing & Fashion",
-        "subcategory":[
-            "Outwear & Jacket",
-            "Formal Dress",
-            "Accessories"
-        ]
-    },
-    {
-        "name":"Computer & Accessories",
-        "subcategory":[
-            "Laptop",
-            "Gaming PC",
-            "Official Equiment"
-        ]
-    },
-    {
-        "name":"Automobile",
-        "subcategory":[
-            "Car",
-            "Bikes"
-        ]
-    },
-    {
-        "name":"Kids & Toys",
-        "subcategory":[
-            "Shoes & Bags",
-            "Baby Clothing",
-            "Girls Toys"
-        ]
-    },
-    {
-        "name":"Sports",
-        "subcategory":[
-            "Cycling",
-            "Sneakers",
-            "Swimming"
-        ]
-    }, {
-        "name":"Jewelery",
-        "subcategory":[
-            "Necklace",
-            "Gold",
-            "Earing"
-        ]
-    },
-     {
-        "name":"Cellphone & Tab",
-        "subcategory":[
-            "Smartphone",
-            "Tablets",
-            "Accessories"
-        ]
-    },
-     {
-        "name":"Furniture",
-        "subcategory":[
-            "Sofa",
-            "Bed",
-            "Home Textile"
-        ]
-    }
-
-]
+    "categories": [
+        {
+            "name": "Áo",
+            "subcategory": [
+                "Áo ngủ",
+                "Áo sơ mi",
+                "Áo vest",
+                "Áo khoác",
+                "Áo Polo"
+            ]
+        },
+        {
+            "name": "Quần",
+            "subcategory": [
+                "Quần Jeans",
+                "Quần Kaki",
+                "Quần tây",
+                "Quần Jogger"
+            ]
+        },
+        {
+            "name": "Đồ bộ",
+            "subcategory": [
+                "Set đồ bộ nữ thun lạnh",
+                "Set đồ bộ nữ cotton",
+                "Set đồ bộ nữ bông"
+            ]
+        },
+        {
+            "name": "Váy",
+            "subcategory": [
+                "Váy ngắn",
+                "Váy dài"
+            ]
+        },
+        {
+            "name": "Đồ bơi",
+            "subcategory": [
+                "Bikini loại 1",
+                "Bikini loại 2"
+            ]
+        }
+    ]
 }

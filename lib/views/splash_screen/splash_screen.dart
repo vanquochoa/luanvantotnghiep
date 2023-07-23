@@ -20,10 +20,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   //change screen 3s
   changeScreen() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       //using getX
       // Get.to(() => const LoginScreen());
-
       auth.authStateChanges().listen((User? user) {
         if (user == null && mounted) {
           Get.to(() => const LoginScreen());

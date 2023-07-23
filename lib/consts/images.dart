@@ -38,7 +38,8 @@ const icProfile = "assets/icons/profile.png";
 const icRefund = "assets/icons/refund.png";
 const icSearch = "assets/icons/search.png";
 const icShop = "assets/icons/shop.png";
-const icSplashBg = "assets/icons/splash_login_registration_background_image.png";
+const icSplashBg =
+    "assets/icons/splash_login_registration_background_image.png";
 const icSquareLogo = "assets/icons/square_logo.png";
 const icTodaysDeal = "assets/icons/todays_deal.png";
 const icTopCategories = "assets/icons/top_categories.png";
@@ -64,15 +65,7 @@ const imgB9 = "assets/images/b9.jpeg";
 const imgB10 = "assets/images/b10.jpeg";
 const imgCod = "assets/images/cod.png";
 const imgFc1 = "assets/images/fc1.jpeg";
-const imgFc2 = "assets/images/fc2.jpeg";
-const imgFc3 = "assets/images/fc3.jpeg";
-const imgFc4 = "assets/images/fc4.jpeg";
-const imgFc5 = "assets/images/fc5.jpeg";
-const imgFc6 = "assets/images/fc6.jpeg";
-const imgFc7 = "assets/images/fc7.jpeg";
-const imgFc8 = "assets/images/fc8.jpeg";
-const imgFc9 = "assets/images/fc9.jpeg";
-const imgFc10 = "assets/images/fc10.jpg";
+
 const imgFd1 = "assets/images/fd1.jpg";
 const imgFd2 = "assets/images/fd2.jpg";
 const imgFd3 = "assets/images/fd3.jpg";
@@ -127,4 +120,10 @@ const imgSslcommerz = "assets/images/sslcommerz.png";
 const imgStripe = "assets/images/stripe.png";
 const imgTwocheckout = "assets/images/twocheckout.png";
 const imgVogue = "assets/images/vogue.png";
+
+const imgDoboi = "assets/images/doboi.jpg";
+const imgAonu = "assets/images/aonu.jpg";
+const imgQuannu = "assets/images/quannu.jpg";
+const imgVaynu = "assets/images/vaynu.jpg";
+const imgDobo = "assets/images/dobo.jpg";
 const imgWallet = "assets/images/wallet.png";

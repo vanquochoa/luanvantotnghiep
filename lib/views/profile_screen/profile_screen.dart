@@ -4,9 +4,13 @@ import 'package:app_thoitrang/controller/auth_controller.dart';
 import 'package:app_thoitrang/controller/profile_controller.dart';
 import 'package:app_thoitrang/services/firestore_service.dart';
 import 'package:app_thoitrang/views/auth_screen/login_screen.dart';
+import 'package:app_thoitrang/views/chat_screen/messaging_screen.dart';
+import 'package:app_thoitrang/views/orders_screen/order_screen.dart';
 import 'package:app_thoitrang/views/profile_screen/components/details_cart.dart';
 import 'package:app_thoitrang/views/profile_screen/edit_profile_screen.dart';
+import 'package:app_thoitrang/views/wishlist_screen/wishlist_screen.dart';
 import 'package:app_thoitrang/widgets_common/bg_widget.dart';
+import 'package:app_thoitrang/widgets_common/loading_indicator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,6 +21,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(ProfileController());
+    FirestoreServices.getCounts();
     return bgWidget(Scaffold(
       body: StreamBuilder(
         stream: FirestoreServices.getUser(currentUser!.uid),
@@ -88,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
                                         .signoutMethod(context);
                                     Get.offAll(() => LoginScreen());
                                   },
-                                  child: Text(
+                                  child: const Text(
                                     "Log out",
                                     style: TextStyle(
                                         fontFamily: semibold,
@@ -101,29 +106,70 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     5.heightBox,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        detailsCart(
-                            width: context.screenWidth / 3.2,
-                            count: data['cart_count'],
-                            title: "in your cart"),
-                        detailsCart(
-                            width: context.screenWidth / 3.2,
-                            count: data['wishlist_count'],
-                            title: "in your wishlist"),
-                        detailsCart(
-                            width: context.screenWidth / 3.2,
-                            count: data['order_count'],
-                            title: "in your order")
-                      ],
-                    ),
+                    FutureBuilder(
+                        future: FirestoreServices.getCounts(),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (!snapshot.hasData) {
+                            return loadingIndicator();
+                          } else {
+                            // print(snapshot.data);
+                            var countData = snapshot.data;
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                detailsCart(
+                                    width: context.screenWidth / 3.2,
+                                    count: countData[0].toString(),
+                                    title: "in your cart"),
+                                detailsCart(
+                                    width: context.screenWidth / 3.2,
+                                    count: countData[1].toString(),
+                                    title: "in your wishlist"),
+                                detailsCart(
+                                    width: context.screenWidth / 3.2,
+                                    count: countData[2].toString(),
+                                    title: "in your order")
+                              ],
+                            );
+                          }
+                        }),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //   children: [
+                    //     detailsCart(
+                    //         width: context.screenWidth / 3.2,
+                    //         count: data['cart_count'],
+                    //         title: "in your cart"),
+                    //     detailsCart(
+                    //         width: context.screenWidth / 3.2,
+                    //         count: data['wishlist_count'],
+                    //         title: "in your wishlist"),
+                    //     detailsCart(
+                    //         width: context.screenWidth / 3.2,
+                    //         count: data['order_count'],
+                    //         title: "in your order")
+                    //   ],
+                    // ),
 
                     //buttons section
                     ListView.separated(
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return ListTile(
+                                  onTap: () {
+                                    switch (index) {
+                                      case 0:
+                                        Get.to(() => const OrdersScreen());
+                                        break;
+                                      case 1:
+                                        Get.to(() => const WishlistScreen());
+                                        break;
+                                      case 2:
+                                        Get.to(() => const MessagesScreen());
+                                        break;
+                                    }
+                                  },
                                   leading: Image.asset(
                                     profileButtonsIcon[index],
                                     width: 22,

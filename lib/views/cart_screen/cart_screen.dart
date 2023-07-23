@@ -1,6 +1,7 @@
 import 'package:app_thoitrang/consts/consts.dart';
 import 'package:app_thoitrang/controller/cart_controller.dart';
 import 'package:app_thoitrang/services/firestore_service.dart';
+import 'package:app_thoitrang/views/cart_screen/shipping_screen.dart';
 import 'package:app_thoitrang/widgets_common/loading_indicator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,17 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Get.put(CartController());
     return Scaffold(
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        width: context.screenWidth - 60,
+        child: ourButton(
+            color: redColor,
+            onPress: () {
+              Get.to(() => ShippingDetails());
+            },
+            textColor: whiteColor,
+            title: "Proceed to shipping"),
+      ),
       backgroundColor: whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -35,6 +47,7 @@ class CartScreen extends StatelessWidget {
             } else {
               var data = snapshot.data!.docs;
               controller.calculate(data);
+              controller.productSnapshot = data;
 
               return Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -44,7 +57,11 @@ class CartScreen extends StatelessWidget {
                       child: ListView.builder(
                         itemBuilder: (BuildContext context, int index) {
                           return ListTile(
-                            leading: Image.network('${data[index]['img']}'),
+                            leading: Image.network(
+                              '${data[index]['img']}',
+                              // width: 80,
+                              // fit: BoxFit.cover,
+                            ),
                             title:
                                 "${data[index]['title']} (x${data[index]['qty']})"
                                     .text
@@ -91,14 +108,14 @@ class CartScreen extends StatelessWidget {
                         .roundedSM
                         .make(),
                     10.heightBox,
-                    SizedBox(
-                      width: context.screenWidth - 60,
-                      child: ourButton(
-                          color: redColor,
-                          onPress: () {},
-                          textColor: whiteColor,
-                          title: "Proceed to shipping"),
-                    )
+                    // SizedBox(
+                    //   width: context.screenWidth - 60,
+                    //   child: ourButton(
+                    //       color: redColor,
+                    //       onPress: () {},
+                    //       textColor: whiteColor,
+                    //       title: "Proceed to shipping"),
+                    // )
                   ],
                 ),
               );

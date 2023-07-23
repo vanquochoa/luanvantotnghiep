@@ -72,7 +72,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       10.widthBox,
                       Expanded(
                         child: RichText(
-                            text: TextSpan(children: [
+                            text: const TextSpan(children: [
                           TextSpan(
                               text: "I agree to the ",
                               style: TextStyle(

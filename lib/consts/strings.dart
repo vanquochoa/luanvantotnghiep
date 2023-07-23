@@ -33,25 +33,16 @@ const search = "Search...",
     topSeller = "Top Seller",
     brand = "Brand",
     topCategories = "Top Categories",
-    womenDress = "Women Dress",
     girlsWatches = "Girl Watches",
     mobilePhone = "Mobile Phone",
     boysGlasses = "Boy Glasses",
     tShirts = "TShirts",
     girlsDress = "Girls Dresses",
-    featureProduct = "Feature Product",
+    featureProduct = "Featured Product",
     featuredCategories = "Featured Category";
 
 //category String
-const womenClothing = "Women Clothings",
-    menClothingFashion = "Men CloThing & Fashion",
-    compAccess = "Computer & Accessories",
-    automobile = "Automobile",
-    kidtoys = "Kids & Toys",
-    sports = "Sports",
-    jewelery = "Jewelery",
-    cellphone = "Cellphone & Tab",
-    furniture = "Furniture";
+const ao = "Áo", quan = "Quần", dobo = "Đồ bộ", vay = "Váy", doboi = "Đồ bơi";
 
 const video = "Video",
     review = "Review",
@@ -66,3 +57,6 @@ const wishlist = "My WishList",
     messages = "Message",
     oldpass = "Old password",
     newpass = "New Password";
+
+//payment methods string
+const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";

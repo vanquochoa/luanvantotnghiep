@@ -36,10 +36,10 @@ class ProductController extends GetxController {
   }
 
   decreaseQuantity() {
-    if (quantity.value > 1) {
+    if (quantity.value > 0) {
       quantity.value--;
     } else {
-      quantity.value = 1;
+      quantity.value = 0;
     }
   }
 
@@ -47,13 +47,15 @@ class ProductController extends GetxController {
     totalPrice.value = price * quantity.value;
   }
 
-  addToCart({title, img, sellername, color, qty, tprice, context}) async {
+  addToCart(
+      {title, img, sellername, color, qty, tprice, context, vendorID}) async {
     await firestore.collection(cartCollection).doc().set({
       'title': title,
       'img': img,
       'sellername': sellername,
       'color': color,
       'qty': qty,
+      'vendor_id': vendorID,
       'tprice': tprice,
       'added_by': currentUser!.uid
     }).catchError((error) {
@@ -62,8 +64,8 @@ class ProductController extends GetxController {
   }
 
   resetValues(price) {
-    totalPrice.value = price * 1;
-    quantity.value = 1;
+    totalPrice.value = price * 0;
+    quantity.value = 0;
     colorIndex.value = 0;
   }
 

@@ -31,7 +31,7 @@ class ItemDetails extends StatelessWidget {
               controller.resetValues(int.parse(data['p_price']));
               Get.back();
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           title: title!.text.color(darkFontGrey).fontFamily(bold).make(),
           actions: [
@@ -162,8 +162,9 @@ class ItemDetails extends StatelessWidget {
                                                 .color(Color(
                                                         data['p_colors'][index])
                                                     .withOpacity(1.0))
-                                                .margin(EdgeInsets.symmetric(
-                                                    horizontal: 6))
+                                                .margin(
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 6))
                                                 .make()
                                                 .onTap(() {
                                               controller
@@ -228,13 +229,15 @@ class ItemDetails extends StatelessWidget {
                                 width: 100,
                                 child: "Total".text.color(Colors.red).make(),
                               ),
-                              "${controller.totalPrice.value}"
-                                  .numVND
-                                  .text
-                                  .color(redColor)
-                                  .size(16)
-                                  .fontFamily(bold)
-                                  .make()
+                              Obx(
+                                () => "${controller.totalPrice.value}"
+                                    .numVND
+                                    .text
+                                    .color(redColor)
+                                    .size(16)
+                                    .fontFamily(bold)
+                                    .make(),
+                              )
                             ],
                           ).box.padding(const EdgeInsets.all(8)).make(),
                         ],
@@ -320,15 +323,21 @@ class ItemDetails extends StatelessWidget {
               child: ourButton(
                   color: redColor,
                   onPress: () {
-                    controller.addToCart(
-                        color: data['p_colors'][controller.colorIndex.value],
-                        context: context,
-                        img: data['p_imgs'][0],
-                        qty: controller.quantity.value,
-                        sellername: data['p_seller'],
-                        title: data['p_name'],
-                        tprice: controller.totalPrice.value);
-                    VxToast.show(context, msg: "Added to cart");
+                    if (controller.quantity.value > 0) {
+                      controller.addToCart(
+                          color: data['p_colors'][controller.colorIndex.value],
+                          context: context,
+                          vendorID: data['vendor_id'],
+                          img: data['p_imgs'][0],
+                          qty: controller.quantity.value,
+                          sellername: data['p_seller'],
+                          title: data['p_name'],
+                          tprice: controller.totalPrice.value);
+                      VxToast.show(context, msg: "Added to cart");
+                    } else {
+                      VxToast.show(context,
+                          msg: "Minium 1 product is required");
+                    }
                   },
                   textColor: whiteColor,
                   title: "Add to cart"),

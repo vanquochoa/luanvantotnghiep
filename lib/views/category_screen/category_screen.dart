@@ -17,13 +17,13 @@ class CategoryScreen extends StatelessWidget {
         title: categories.text.fontFamily(bold).white.make(),
       ),
       body: Container(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: GridView.builder(
             shrinkWrap: true,
-            itemCount: 9,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            itemCount: 5,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                mainAxisSpacing: 8,
+                mainAxisSpacing: 20,
                 crossAxisSpacing: 8,
                 mainAxisExtent: 200),
             itemBuilder: (context, index) {
@@ -31,7 +31,7 @@ class CategoryScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     categoriesImage[index],
-                    height: 120,
+                    height: 150,
                     width: 200,
                     fit: BoxFit.cover,
                   ),

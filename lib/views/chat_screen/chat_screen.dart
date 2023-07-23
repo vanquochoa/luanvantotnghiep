@@ -3,6 +3,7 @@ import 'package:app_thoitrang/controller/chats_controller.dart';
 import 'package:app_thoitrang/services/firestore_service.dart';
 import 'package:app_thoitrang/views/chat_screen/components/sender_bubble.dart';
 import 'package:app_thoitrang/widgets_common/loading_indicator.dart';
+import 'package:app_thoitrang/widgets_common/our_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

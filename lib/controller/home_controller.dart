@@ -1,4 +1,5 @@
 import 'package:app_thoitrang/consts/consts.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -10,6 +11,9 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
+  var searchController = TextEditingController();
+
+  var featuredlist = [];
   var username = '';
   getUsername() async {
     var n = await firestore

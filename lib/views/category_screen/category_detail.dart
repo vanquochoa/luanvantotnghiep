@@ -38,7 +38,7 @@ class CategoryDetails extends StatelessWidget {
               var data = snapshot.data!.docs;
 
               return Container(
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -72,9 +72,9 @@ class CategoryDetails extends StatelessWidget {
                             shrinkWrap: true,
                             itemCount: data.length,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    mainAxisExtent: 250,
+                                    mainAxisExtent: 300,
                                     mainAxisSpacing: 8,
                                     crossAxisSpacing: 8),
                             itemBuilder: (context, index) {
@@ -83,8 +83,8 @@ class CategoryDetails extends StatelessWidget {
                                 children: [
                                   Image.network(
                                     data[index]['p_imgs'][0],
-                                    width: 200,
-                                    height: 150,
+                                    width: 150,
+                                    height: 200,
                                     fit: BoxFit.fill,
                                   ),
                                   10.heightBox,
